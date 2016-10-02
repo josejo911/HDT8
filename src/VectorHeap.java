@@ -8,18 +8,17 @@ import java.util.Vector;
  *Integrantes:
  *Jose Javier Jo 14343
  /Jorge Suchite, 15
- *VectorHeap: Clase encargada de crear un vector basado en Heap que hereda 
- *de la clase PriorityQueue para ordenar los datos en orden de importancia 
+ *Esta clase se encarga de generar un vector basado en la estructura de datos Heap que hereda de PriorityQueue para ordenar los datos en orden de importancia
  **/
 
 public class VectorHeap < E extends Comparable<E>> extends PriorityQueue<E>{
 	/**
-	 * Data: Vector que almacena la informacion del VectorHeap 
+	 * Es un vector que guarda la informacion del VectorHeap  
 	 */
 	protected Vector<E> data; // the data, kept in heap order
 	
 	/**
-	 * Constructor de la clase sin ningun vector predeterminado 
+	 * Constructor que no tiene ningun vector predeterminado  
 	 */
 	public VectorHeap()
 	// post: constructs a new priority queue
@@ -27,11 +26,10 @@ public class VectorHeap < E extends Comparable<E>> extends PriorityQueue<E>{
 	data = new Vector<E>();
 	}
 	/**
-	 * Constructor de la clase que recibe un Vector como parametro.
-	 * Este constructor convierte el vector ingresado en un VectorHeap
-	 * @param v Vector a convertir en VectorHeap 
-	 */
-	public VectorHeap(Vector<E> v)
+	 * Aca se encuentra el constructor de la clase que se encarga de recibir un vector como parametro 
+	 * lo que hace es que convierte el vector ingresado en un VectorHeap 
+	 * @param v Vector a convierte a VectorHeap 
+	 */public VectorHeap(Vector<E> v)
 	// post: constructs a new priority queue from an unordered vector
 	{
 	int i;
@@ -43,9 +41,9 @@ public class VectorHeap < E extends Comparable<E>> extends PriorityQueue<E>{
 	}
 	
 	/**
-	 * Retorna el padre del nodo indicado 
-	 * @param i Nodo del cual se desea conocer el padre 
-	 * @return Padre del Nodo en la posicion i 
+	 * Aca se regresa el nodo PADRE que se necesita  
+	 * @param El parametro i es el nodo del que se necesita conocer su PADRE  
+	 * @return PADRE del nodo que esta en la posicion i 
 	 */
 	protected static int parent(int i)
 	// pre: 0 <= i < size
@@ -55,9 +53,9 @@ public class VectorHeap < E extends Comparable<E>> extends PriorityQueue<E>{
 	}
 	
 	/**
-	 * Retorna el hijo izquierdo del nodo indicado 
-	 * @param i Nodo del cual se desea conocer el hijo 
-	 * @return Localidad del hijo izquierdo del nodo 
+	 * Regresa el hijo de la izquierda del nodo indicado  
+	 * @param El parametro i del nodo que se desea conocer del hijo  
+	 * @return La localida que se encuetra el hijo de izquierdo del nodo  
 	 */
 	protected static int left(int i)
 	// pre: 0 <= i < size
@@ -67,9 +65,9 @@ public class VectorHeap < E extends Comparable<E>> extends PriorityQueue<E>{
 	}
 	
 	/**
-	 * Retorna el hijo derecho del nodo indicado 
-	 * @param i	Nodo del cual se desea conocer el hijo derecho
-	 * @return Localidad del hijo derecho del nodo 
+	 * Regresa el hijo derecho del nodo que seleccionamos  
+	 * @param El parametro i del nodo que se desea conocer del hijo derechp
+	 * @return La localida que se encuetra el hijo de derecho del nodo 
 	 */
 	protected static int right(int i)
 	// pre: 0 <= i < size

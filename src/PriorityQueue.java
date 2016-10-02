@@ -5,51 +5,41 @@
  *Integrantes:
  *Jose Javier Jo 14343
  /Jorge Suchite, 15
- *Interface Priority Queue: Interface que indica los metodos a implementar
- *en una PriorityQueue
+ *Esta interfaz se encarga de los metodos a implementar ya que es un PriorityQueue osea se encarga de observar la prioridad 
  **/
 public interface PriorityQueue<E extends Comparable<E>>
 {
 	/**
-	 *Retorna el primer elemento de la cola
-	 * @return primer elemento de la cola
+	 *Regresa el primer elemento que se encuetra en la cola 
+	 * @return  elemento numero 1 de la cola
 	 */
 	public E getFirst();
-	// pre: !isEmpty()
-	// post: returns the minimum value in priority queue
+
 	
 	/**
-	 * Remueve y retorna el elemento con el menor valor de la cola
-	 * @return El elemento con el minimo valor 
+	 * Elimina y retorna el elemento de  menor valor en la cola
+	 * @return elemento con el valor mas pequeño de la cola
 	 */
 	public E remove();
-	// pre: !isEmpty()
-	// post: returns and removes minimum value from queue
-	
+
 	/**
-	 * Se agrega un nuevo elemento a la Cola
+	 * Agrega un nuevo elemento a la cola 
 	 * @param value Valor que se desea agregar a la cola 
 	 */
 	public void add(E value);
-	// pre: value is non-null comparable
-	// post: value is added to priority queue
-	
+
 	/**
 	 * Determina si la cola se encuentra vacia 
 	 * @return TRUE si esta vacio y FALSE si no 
 	 */
-	public boolean isEmpty();
-	// post: returns true iff no elements are in queue
-	
+	public boolean isEmpty();	
 	/**
-	 * Retorna el tamano del la cola
+	 * Regresa el tamaño actual de la cola 
 	 * @return Tamano de la cola 
 	 */
 	public int size();
-	// post: returns number of elements within queue
-	
 	/**
-	 * Remueve todos los elementos de la cola 
+	 * Elimina todos los elementos de la cola 
 	 */
 	public void clear();
 	// post: removes all elements from queue

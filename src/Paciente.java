@@ -5,35 +5,34 @@
  *Integrantes:
  *Jose Javier Jo 14343
  /Jorge Suchite, 15
- *Paciente: Clase encagrada de almacenar los datos de los pacientes. Estos incluyen 
- *el nombre, sintoma y codigo de emergencia. 
+ *En esta clase se almacenan los datos cada uno de los pacientes incluyebdo su nombre sintoma y codigo de emergencia
  **/
 
 
 public class Paciente<E> implements Comparable<E> {
 	
-	private String name;	//Nombre de paciente 
+	private String name;	//Nombre de paciente que ingresa
 	private String sintoma;	//Sintoma de paciente 
-	private String code;	//Codigo de Emergencia de Paciente 
+	private String codigo;	//Codigo de Emergencia de Paciente 
 	
 	/**
 	 * Constructor de la Clase. Crea un nuevo objeto Paciente recibiendo diferentes parametros 
-	 * @param new_name Nombre del Paciente a crear
+	 * @param new_nombre Nombre del Paciente a crear
 	 * @param new_sintoma Sintoma del paciente a crear 
-	 * @param new_code Codigo de Emergencia del paciente 
+	 * @param new_codigo Codigo de Emergencia del paciente 
 	 */
-	public Paciente (String new_name, String new_sintoma, String new_code) {
+	public Paciente (String new_name, String new_sintoma, String new_codigo) {
 		name=new_name;
 		sintoma=new_sintoma;
-		code=new_code;
+		codigo=new_codigo;
 	}
 	
 	/**
 	 * Permite obtener el codigo de emergencia del paciente 
 	 * @return codigo de emergencia 
 	 */
-	public String getCode(){
-		return code;
+	public String getcodigo(){
+		return codigo;
 	}
 	
 	/* (non-Javadoc)
@@ -42,15 +41,15 @@ public class Paciente<E> implements Comparable<E> {
 	@Override
 	public int compareTo(E new_paciente) {
 		// TODO Auto-generated method stub
-		String new_code=((Paciente)new_paciente).getCode();
-		return code.compareTo(new_code);
+		String new_codigo=((Paciente)new_paciente).getcodigo();
+		return codigo.compareTo(new_codigo);
 	}
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	public String toString(){
-		return name+", "+sintoma+", "+code;
+		return name+", "+sintoma+", "+codigo;
 	}
 
 }

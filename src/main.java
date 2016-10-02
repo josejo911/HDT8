@@ -25,29 +25,29 @@ public class main {
 		BufferedReader br = new BufferedReader(new FileReader(file));
 	    String line;
 	    
-	    Vector<Paciente> listado_pacientes = new Vector<Paciente>();
+	    Vector<Paciente> patient_list = new Vector<Paciente>();
 	    
         try {
 			while ((line = br.readLine()) != null) {
 				//separador de frases
 			    separador=line.split(",");
-			    listado_pacientes.add(new Paciente(separador[0], separador[1], separador[2]));
+			    patient_list.add(new Paciente(separador[0], separador[1], separador[2]));
 			    //System.out.print(separador[0]+separador[1]+separador[2]);
 			}
 		} catch (IOException e) {
 			System.out.println("error");
 		}
         
-        //imprimir listado de pacientes original
-        System.out.println("Listado Original\n");
-        for(int i=0; i<listado_pacientes.size(); i++){
-            System.out.println(listado_pacientes.get(i));
+//Se muestra en pantalla el listado de pacinttes ingresados originalmente en el texto 
+        System.out.println("Listado de pacientes ingresados en el IGSS Jutiapa\n");
+        for(int i=0; i<patient_list.size(); i++){
+            System.out.println(patient_list.get(i));
 		}
 
         
-        System.out.println("\nAtención de emergencias que usa la implementación \nproporcionada por el Java Collection Framework\n");
+        System.out.println("\nAtencion de emergencias que usa una implementacion  \nproporcionada por el Java Collection Framework\n");
         
-        VectorHeap v_heap = new VectorHeap(listado_pacientes);
+        VectorHeap v_heap = new VectorHeap(patient_list);
 		String ordenados="";
         while(v_heap.iterator().hasNext()){
 			Paciente paciente = (Paciente) v_heap.poll();
@@ -57,10 +57,10 @@ public class main {
 		
 		System.out.println(ordenados);
 		
-		System.out.println("Atención de emergencias que usa su implementación de VectorHeap\n");
+		System.out.println("Atencion de emergencias que usa implementacion de VectorHeap\n");
 		
 		ordenados="";
-		VectorHeap_implementa v_heap2 = new VectorHeap_implementa(listado_pacientes);
+		VectorHeap_implements v_heap2 = new VectorHeap_implements(patient_list);
 		int size=v_heap2.size();
 		
 		for(int i=0; i<size; i++){
